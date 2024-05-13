@@ -1,6 +1,6 @@
 package entities;
 
-public class Product implements Comparable<Product> {
+public class Product {
 
     private String name;
     private Double price;
@@ -27,11 +27,6 @@ public class Product implements Comparable<Product> {
 
     public void setPrice(Double price) {
         this.price = price;
-    }
-
-    @Override
-    public int compareTo(Product other) {
-        return name.toUpperCase().compareTo(other.getName().toUpperCase());
     }
 
     @Override
