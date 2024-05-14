@@ -16,9 +16,9 @@ public class App {
         list.add(new Product("Tablet", 350.00));
         list.add(new Product("HD Case", 90.50));
 
-        Predicate<Product> pred = p -> p.getPrice() >= 100.0;
+       // Predicate<Product> pred = p -> p.getPrice() >= 100.0;
 
-        list.removeIf(pred); // Versão 5
+        list.removeIf(p -> p.getPrice() >= 100.0); // Versão 6 Final
 
         for (Product product : list) {
             System.out.println(product);
