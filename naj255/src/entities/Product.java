@@ -29,8 +29,13 @@ public class Product {
         this.price = price;
     }
 
-    public static boolean staticProductPredicate(Product p) {
+    public static boolean staticProductPredicate(Product p) { // Trabalha com o produto que passarmos como argumento,
+                                                              // por ser um método estático
         return p.getPrice() >= 100.0;
+    }
+
+    public boolean nonStaticProductPredicate() { // Método da instancia, entao trabalha com o proprio objeto que está
+        return price >= 100.0;
     }
 
     @Override
