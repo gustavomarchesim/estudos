@@ -16,7 +16,7 @@ public class App {
         list.add(new Product("Tablet", 350.00));
         list.add(new Product("HD Case", 90.50));
 
-        list.removeIf(new ProductPredicate()); // Versão 1
+        list.removeIf(Product::staticProductPredicate); // Versão 3
 
         for (Product product : list) {
             System.out.println(product);
