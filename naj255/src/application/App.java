@@ -2,6 +2,7 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import entities.Product;
 
@@ -15,7 +16,9 @@ public class App {
         list.add(new Product("Tablet", 350.00));
         list.add(new Product("HD Case", 90.50));
 
-        list.removeIf(Product::nonStaticProductPredicate); // Versão 4
+        Predicate<Product> pred = p -> p.getPrice() >= 100.0;
+
+        list.removeIf(pred); // Versão 5
 
         for (Product product : list) {
             System.out.println(product);
