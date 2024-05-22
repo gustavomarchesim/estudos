@@ -14,6 +14,12 @@ public class Program {
 
         Pessoa p = em.find(Pessoa.class, 3);
 
+        // Sempre que fizer uma operação que não seja uma consulta simples, devemos
+        // começar uma transaction e fecha-la
+        em.getTransaction().begin();
+        em.remove(p);
+        em.getTransaction().commit();
+
         System.out.println(p);
 
         em.close();
